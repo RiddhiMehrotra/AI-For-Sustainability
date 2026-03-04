@@ -20,3 +20,6 @@ python src/q2_label.py
 
 6. Run Q3 (Training & Evaluation)
 python src/q3_training.py
+
+
+I consulted an AI assistant(Claude) for clarifying concepts, improving code structure and debugging support during development. The implementation, model design, and analysis were completed by me.
