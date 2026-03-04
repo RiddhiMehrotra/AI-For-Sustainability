@@ -1,8 +1,6 @@
-import geopandas as gpd
-from shapely.geometry import Point
 from pathlib import Path
 import rasterio
-from rasterio.windows import Window, transform
+from rasterio.windows import Window
 import numpy as np
 from scipy import stats
 import pandas as pd
@@ -28,7 +26,7 @@ with rasterio.open("data/raw/land_cover.tif") as src:
             lon= float(p[1])
             row, col = src.index(lon, lat)
             row_start= row - 64
-            col_start = col -64
+            col_start = col - 64
             window = Window(col_start, row_start, 128, 128)
             if  row_start < 0 or col_start < 0 or row_start + 128 > src.height or col_start + 128 > src.width:
                 print(f"Skipping {filename} due to out-of-bounds window.")
